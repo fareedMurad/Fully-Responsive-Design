@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+
+  <div id="defaultCube" style="width: 200px; height: 150px;"> 
+    <img src="img/1.jpg" alt="Uluru" title="Uluru"/> 
+    <img src="img/2.jpg" alt="Islands"title="Islands"/> 
+    <img src="img/3.jpg" alt="Gorge" title="Gorge"/> 
+</div>
+<script>
+$('#defaultCube').imagecube(); 
+ 
+$('#stopCube').click(function() { 
+    var start = $(this).text() === 'Start'; 
+    $(this).text(start ? 'Stop' : 'Start'); 
+    $('#defaultCube').imagecube(start ? 'start' : 'stop'); 
+}); 
+ 
+$('#removeCube').click(function() { 
+    var destroy = $(this).text() === 'Remove'; 
+    $(this).text(destroy ? 'Re-attach' : 'Remove'); 
+    $('#defaultCube').imagecube(destroy ? 'destroy' : {}); 
+});
+$('#directionCube').imagecube({direction: 'up', repeat: false}); 
+
+</script>
+<link href="D:\countdown\jquery.imagecube.min.js">
+</body>
+</html>
